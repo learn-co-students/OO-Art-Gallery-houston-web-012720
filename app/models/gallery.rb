@@ -27,7 +27,7 @@ class Gallery
   end
   def most_expensive_painting
     #  Returns an `instance` of the most expensive painting in a gallery
-    paintings.select do |paint|
+    paintings.max_by do |paint|
       paint.price
     end
 

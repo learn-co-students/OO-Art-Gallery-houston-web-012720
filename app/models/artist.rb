@@ -31,8 +31,8 @@ class Artist
   end
   def self.total_experience
     # Returns an `integer` that is the total years of experience of all artists
-    total = 0
-    self.all.map do |artist|
+      total = 0
+      self.all.map do |artist|
       total += artist.years_experience
     end 
     total
@@ -40,8 +40,8 @@ class Artist
   def self.most_prolific
     # Returns an `instance` of the artist with the highest amount of paintings per year of experience. 
     # count max for this (total number of projects / years of expercied )
-    self.all.select do |artist|
-      avarage = artist.paintings.count / artist.years_experience
+    self.all.max_by do |artist|
+       artist.paintings.count / artist.years_experience
     end 
   end
   def create_painting(title , price, gallary)
