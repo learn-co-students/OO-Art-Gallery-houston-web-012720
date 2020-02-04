@@ -9,8 +9,14 @@ class Painting
   def initialize(title, price , artist , gallary)
     @title = title
     @price = price
+    @artist = artist
+    @gallary = gallary
+    @@all << self
   end
-  def total.total_price
+  def self.all
+    @@all
+  end 
+  def self.total_price
     #  Returns an `integer` that is the total price of all paintings
     total = 0 
     self.all.map do |paint|

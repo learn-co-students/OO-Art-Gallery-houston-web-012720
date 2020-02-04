@@ -2,11 +2,15 @@
 class Gallery
 
   attr_reader :name, :city
-
+  @@all= []
   def initialize(name, city)
     @name = name
     @city = city
+    @@all << self
   end
+  def self.all
+    @@all
+  end 
   def paintings
     # Returns an `array` of all paintings in a gallery
     Painting.all.select do |paint|
@@ -30,6 +34,7 @@ class Gallery
     paintings.max_by do |paint|
       paint.price
     end
+  end
 
 
 end

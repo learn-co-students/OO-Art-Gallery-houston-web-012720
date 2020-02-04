@@ -16,8 +16,9 @@ class Artist
   end 
   def paintings
     # Returns an `array` all the paintings by an artist
-    Painting.all.selecet do |paint|
+    Painting.all.select do |paint|
       paint.artist == self
+    end
   end 
   def galleries
       # Returns an `array` of all the galleries that an artist has paintings in
@@ -27,7 +28,9 @@ class Artist
   end
   def cities
     # Return an `array` of all cities that an artist has paintings in
-    galleries.city
+    galleries.map do |gallary| 
+      gallary.city
+    end 
   end
   def self.total_experience
     # Returns an `integer` that is the total years of experience of all artists
