@@ -15,6 +15,7 @@ The initial files and basic attributes have already been built, but you'll need 
 ### Model the Domain
 
 An artist can, of course, have many paintings. Paintings can only be in one gallery at a time, and only have one artist.  Galleries can have many paintings.
+artist < --  paint --> gallary
 
 * What are your models?
 * What does your schema look like?
